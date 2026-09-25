@@ -5,7 +5,7 @@ I aim to explore the data, find meaningful patterns, communicate the findings an
 
 ## Dataset
 -	The name of the dataset is Food Delivery Route Efficiency Dataset
--	View Dataset Here!
+-	View Dataset Here! [View Original Dataset Here](Food_Delivery_Route_Efficiency_Dataset.csv)
 -	The dataset contains 10 columns and 200 rows excluding the headings.
 -	Dataset Variables
   
@@ -21,6 +21,11 @@ I aim to explore the data, find meaningful patterns, communicate the findings an
 | `order_time` | Time the order was placed | 
 | `restaurant_zone` | Zone where the restaurant is located | 
 | `customer_zone` | Zone where the customer is located |
+
+## Tools Used
+* **MySQL**
+* **Power BI**
+* **DAX**
 
 ## Business Problem
 A food delivery company is experiencing differences in the amount of time it takes to deliver customer orders. Management wants to understand: **What factors are affecting delivery time, and how can the company improve its delivery efficiency?**
@@ -41,6 +46,7 @@ A food delivery company is experiencing differences in the amount of time it tak
 ## Data Cleaning
 ### Using MySQL 
 The order_time column was not in the right structure, so I made that order time a varchar column and then created two new columns called order_time and order_date. Then I updated the new two columns with the right date and time from the original order_time.
+
 
 ## Data Exploration
 ### Using MySQL
@@ -95,6 +101,8 @@ The order_time column was not in the right structure, so I made that order time 
 11. **Are there noticeable differences between zones?**
 * **Result:** Out of 25 distinct route combinations, the slowest route are North to South (66.87 minutes) and East to South (60.62 minutes), while other routes complete much faster.
 * **Insight:** I noticed that some zone-to-zone routes had much higher average delivery times than others, especially North to South and East to South. These routes should be investigated further to understand what factors may be contributing to the longer delivery times.
+
+[View SQL Queries Here](food_delivery_route_efficiency.sql)
 
 ## Dax Calculations
 1. New Column for grouped distances
@@ -167,6 +175,8 @@ I built an interactive dashboard to visually look at the factors that are affect
 5. **Interactive Filters**
 * **Visual Type:** Tile Slicers and Dropdown
 * **Purpose:** These slicers allow users to filter the dashboard by Traffic Level, Weather Condition and Delivery Route, making it easier to examine how delivery performance changes across different conditions.
+
+![Dashboard Overview](dashboard_sceenshot.jpeg)
 
 ## Key Findings
 1. **Delivery distance has a strong relationship with delivery time.**
